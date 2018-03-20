@@ -29,6 +29,6 @@ describe('Plane', function() {
     it('can takeoff from an airport', function() {
       plane.takeoff(airport);
       expect(airport.clearForTakeOff).toHaveBeenCalledWith(plane);
-    })
-  })
+    });
+  });
 });

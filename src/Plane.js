@@ -1,6 +1,6 @@
 function Plane(status = 'flying') {
   this._status = status;
-}
+};
 
 Plane.prototype.land = function(airport) {
   airport.clearForLanding(this);
@@ -9,5 +9,5 @@ Plane.prototype.land = function(airport) {
 
 Plane.prototype.takeoff = function(airport) {
   airport.clearForTakeOff(this);
-  this._status = 'flying'
-}
+  this._status = 'flying';
+};
