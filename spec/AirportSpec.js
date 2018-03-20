@@ -1,13 +1,14 @@
 describe('Airport', function() {
   var airport;
   var plane;
+
   beforeEach(function() {
     airport = new Airport();
     plane = jasmine.createSpy('plane', ['land']);
   });
 
   describe('hangar', function(){
-    it('has an empty hangar', function(){
+    it('initially has an empty hangar', function(){
       expect(airport._hangar).toEqual ([]);
     });
   });
@@ -18,7 +19,4 @@ describe('Airport', function() {
       expect(airport._hangar).toEqual([plane]);
     });
   });
-
-
-
 });

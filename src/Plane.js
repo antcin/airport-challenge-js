@@ -3,6 +3,11 @@ function Plane(status = 'flying') {
 }
 
 Plane.prototype.land = function(airport) {
-  this._status = 'landed';
   airport.clearForLanding(this);
+  this._status = 'landed';
 };
+
+Plane.prototype.takeoff = function(airport) {
+  airport.clearForTakeOff(this);
+  this._status = 'flying'
+}

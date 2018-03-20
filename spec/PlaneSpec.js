@@ -1,11 +1,11 @@
 describe('Plane', function() {
   var plane;
   var airport;
+
   beforeEach(function() {
     plane = new Plane();
-    airport = jasmine.createSpyObj('airport', ['clearForLanding']);
+    airport = jasmine.createSpyObj('airport', ['clearForLanding', 'clearForTakeOff']);
   });
-
 
   describe('status', function() {
     it('returns flying if plane is flying', function() {
@@ -18,11 +18,17 @@ describe('Plane', function() {
       });
   });
 
-  describe('landing', function(){
-    it('can land at an airport', function(){
+  describe('land', function() {
+    it('can land at an airport', function() {
       plane.land(airport);
       expect(airport.clearForLanding).toHaveBeenCalledWith(plane);
     });
   });
 
+  describe('takeoff', function() {
+    it('can takeoff from an airport', function() {
+      plane.takeoff(airport);
+      expect(airport.clearForTakeOff).toHaveBeenCalledWith(plane);
+    })
+  })
 });
